@@ -1,15 +1,22 @@
+-- 🔥 Cleanup old Rayfield UI
+for _,v in pairs(game.CoreGui:GetChildren()) do
+    if v.Name == "Rayfield" then
+        v:Destroy()
+    end
+end
+
 -- 🌌 Load Rayfield UI Library
 local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Rayfield/main/source.lua"))()
 
--- 🧱 Create Main Window
+-- 🧱 Create Main Window with unique config
 local Window = Rayfield:CreateWindow({
-    Name = "Cosmic Arsenal",
-    LoadingTitle = "Injecting Chaos...",
+    Name = "Cosmic Inferno Cheat",
+    LoadingTitle = "Igniting the Inferno...",
     LoadingSubtitle = "by Edsa",
     ConfigurationSaving = {
         Enabled = true,
-        FolderName = "CosmicArsenal",
-        FileName = "config"
+        FolderName = "CosmicInferno_"..math.random(1000,9999),
+        FileName = "config_"..math.random(1000,9999)
     },
     Discord = {
         Enabled = false
@@ -25,7 +32,7 @@ local SettingsTab = Window:CreateTab("Settings", 4483362458)
 local ConfigTab = Window:CreateTab("Config", 4483362458)
 local CreditTab = Window:CreateTab("Credits", 4483362458)
 
--- 🔴 Rage Tab Features
+-- 🔴 Rage Tab
 RageTab:CreateToggle({
     Name = "Silent Aim",
     CurrentValue = false,
@@ -42,7 +49,7 @@ RageTab:CreateToggle({
     end
 })
 
--- 🟢 Legit Tab Features
+-- 🟢 Legit Tab
 LegitTab:CreateToggle({
     Name = "Recoil Control",
     CurrentValue = false,
@@ -61,7 +68,7 @@ LegitTab:CreateSlider({
     end
 })
 
--- 🟣 Visuals Tab Features
+-- 🟣 Visuals Tab
 VisualsTab:CreateToggle({
     Name = "ESP",
     CurrentValue = false,
@@ -78,7 +85,7 @@ VisualsTab:CreateColorPicker({
     end
 })
 
--- ⚙️ Settings Tab Features
+-- ⚙️ Settings Tab
 SettingsTab:CreateDropdown({
     Name = "Crosshair Style",
     Options = {"Dot", "Circle", "Plus", "None"},
@@ -98,7 +105,7 @@ SettingsTab:CreateSlider({
     end
 })
 
--- 💾 Config Tab Features
+-- 💾 Config Tab
 ConfigTab:CreateButton({
     Name = "Save Config",
     Callback = function()
@@ -115,10 +122,10 @@ ConfigTab:CreateButton({
     end
 })
 
--- 👑 Credit Tab Features
+-- 👑 Credit Tab
 CreditTab:CreateParagraph({
     Title = "Made by Edsa",
-    Content = "Cosmic Arsenal UI powered by Rayfield.\nScripted for chaos, precision, and style."
+    Content = "Cosmic Inferno Cheat UI powered by Rayfield.\nScripted for chaos, precision, and style."
 })
 
 CreditTab:CreateButton({
