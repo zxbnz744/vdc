@@ -1,12 +1,5 @@
--- 🔥 Cleanup old Rayfield UI
-for _,v in pairs(game.CoreGui:GetChildren()) do
-    if v.Name == "Rayfield" then
-        v:Destroy()
-    end
-end
-
 -- 🌌 Load Rayfield UI Library
-local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Rayfield/main/source.lua"))()
+local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Rayfield/main/source.lua", true))()
 
 -- 🧱 Create Main Window with unique config
 local Window = Rayfield:CreateWindow({
