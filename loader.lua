@@ -1,4 +1,4 @@
--- 🌌 Load Rayfield UI Library
+-- 🌌 Load Rayfield UI Library (with proper HttpGet)
 local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Rayfield/main/source.lua", true))()
 
 -- 🧱 Create Main Window with unique config
